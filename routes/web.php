@@ -1,11 +1,9 @@
 <?php
-use App\Livewire\Pages\Home;
+use App\Http\Controllers\Landing;
 use Illuminate\Support\Facades\Route;
 
 // Route for the landing page, accessible without authentication
-Route::get('/', function () {
-    return view('landing'); // Ensure you have a 'landing.blade.php' view file
-});
+Route::get('/', Landing::class)->name('landing');
 
 Route::middleware([
     'auth:sanctum',
