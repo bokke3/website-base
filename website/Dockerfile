@@ -40,6 +40,8 @@ WORKDIR /var/www
 
 COPY . /var/www
 
+RUN git init && git remote add origin https://github.com/bokke3/website-base.git
+
 # Copy the nginx config
 COPY default.conf /etc/nginx/http.d/default.conf
 COPY start.sh /start.sh
