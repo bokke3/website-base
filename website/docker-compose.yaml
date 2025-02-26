@@ -9,10 +9,7 @@ services:
       - mysql
     networks:
       - laravel-network
-    volumes:
-      - .:/var/www
-      - /var/www/vendor/
-      - /var/www/public/
+ 
 
   mysql:
     image: mysql:8.0

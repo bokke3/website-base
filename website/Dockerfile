@@ -8,6 +8,7 @@ RUN apk update && \
     oniguruma-dev \
     libxml2-dev \
     zip \
+    openssh \
     curl \
     unzip \
     git \
