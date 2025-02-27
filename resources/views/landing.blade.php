@@ -11,6 +11,17 @@
             padding: 0;
             box-sizing: border-box;
         }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
         .hero {
             background: url('hero-image.jpg') no-repeat center center/cover;
             height: 100vh;
@@ -20,6 +31,7 @@
             align-items: center;
             text-align: center;
             color: black;
+            padding-top: 60px; /* Adjust for navbar height */
         }
         .hero h1 {
             font-size: 3em;
@@ -66,6 +78,22 @@
             font-size: 0.9em;
             color: #555;
         }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2em;
@@ -98,7 +126,7 @@
 </head>
 <body class="{{ app()->isProduction() ? 'light-theme' : '' }}">
     @if (Route::has('login'))
-        <nav class="-mx-3 flex flex-1 justify-end">
+        <nav class="navbar">
             @auth
                 <a href="{{ url('/dashboard') }}" class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                     Dashboard
@@ -135,6 +163,10 @@
             <p>"A game-changer for our business. The features are exactly what we needed."</p>
             <span>- John Smith, Company ABC</span>
         </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 CMS Company. All rights reserved.</p>
+        <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
     </div>
 </body>
 </html>
